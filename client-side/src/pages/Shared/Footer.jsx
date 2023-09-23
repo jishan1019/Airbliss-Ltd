@@ -22,6 +22,7 @@ const Footer = () => {
   };
 
   const allServices = useSelector((state) => state?.ourServices?.services);
+
   const sliceService = allServices?.slice(4, 6);
 
   // className = "px-5 sm:px-10 max-w-7xl mx-auto h-auto overflow-hidden";

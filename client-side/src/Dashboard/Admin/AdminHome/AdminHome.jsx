@@ -169,9 +169,7 @@ const AdminHome = () => {
         <div className="mt-12 bg-white shadow-lg rounded-xl p-2 md:p-5">
           <div className="flex justify-between items-center my-5">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold">
-                Pev vs Today Revenue
-              </h2>
+              <h2 className="text-xl md:text-2xl font-bold">Revenue</h2>
               <p className="font-semibold text-gray-500 tracking-wider">
                 Revenue Without Vat
               </p>

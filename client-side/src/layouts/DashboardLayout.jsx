@@ -7,7 +7,7 @@ import Loader from "../Components/Loader/Loader";
 
 const DashboardLayout = () => {
   const { loading } = useAuth();
-  console.log(loading);
+
   const [isActive, setActive] = useState("false");
   // const [isLoading, setLoading] = useState(false)
   // Sidebar Responsive Handler

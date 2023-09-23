@@ -16,7 +16,7 @@ import {
 } from "../../../redux/features/manageFlightSlice";
 import { TbCalendarTime } from "react-icons/tb";
 
-const AdminNav = ({closeSidebar}) => {
+const AdminNav = ({ closeSidebar }) => {
   const [axiosSecure] = UseAxiosSecure();
   const dispatch = useDispatch();
   const allBooking = useSelector((state) => state?.userBookingInfo.allBookings);
@@ -64,7 +64,7 @@ const AdminNav = ({closeSidebar}) => {
     <>
       <NavLink
         to="adminHome"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -78,7 +78,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="manageUsers"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -93,7 +93,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="addFlight"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -108,9 +108,9 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="flightStatus"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
-          `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-gray-800 ${
+          `flex items-center shadow-lg w-48 rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-gray-800 ${
             isActive
               ? "bg-white text-gray-800 active:border rounded-full"
               : "text-white"
@@ -123,7 +123,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="insurance"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -138,7 +138,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="reschedule"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -153,7 +153,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="managebookings"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-gray-800 ${
             isActive
@@ -168,7 +168,7 @@ const AdminNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="account"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive

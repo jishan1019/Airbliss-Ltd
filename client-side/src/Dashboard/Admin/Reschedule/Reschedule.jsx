@@ -32,12 +32,10 @@ const Reschedule = () => {
   const Denied = AllReschedule?.filter(
     (booking) => booking?.residualStatus === "denied"
   );
-  console.log(AllReschedule);
 
   const myFlight = AllReschedule?.find(
     (flight) => flight?.bookingReference === flightRef
   );
-  console.log(myFlight);
 
   const paidAmount = myFlight?.flight?.fareSummary?.total;
   const deductedAmount = Math.round(myFlight?.flight?.fareSummary?.total * 0.3);
@@ -73,10 +71,10 @@ const Reschedule = () => {
   return (
     <div className="lg:mt-10">
       <section className="bg-white p-4 shadow-md mt-5 flex md:flex-row flex-col ">
-        <div className="mb-2 md:mb-0">
+        <div className="mb-2 md:mb-0 md:mt-1 md:mr-1">
           <h1 className="font-semibold ">Apply Reschedule: </h1>
         </div>
-        <div className="flex gap-1 rounded font-medium text-gray-600 text-sm">
+        <div className="flex flex-col md:flex-row gap-1 rounded font-medium text-gray-600 text-sm">
           <div
             onClick={() => handleTabClick("allflight")}
             className={`px-4 py-2 cursor-pointer flex items-center gap-1 ${
