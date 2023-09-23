@@ -24,7 +24,6 @@ const Main = () => {
     fetch("http://localhost:5000/whyairbliss")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Data", data);
         dispatch(setAccordionData(data));
       });
   }, [refetch]);

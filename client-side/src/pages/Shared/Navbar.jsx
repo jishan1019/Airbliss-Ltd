@@ -30,7 +30,6 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isDarkMode) {
-      console.log(isDarkMode);
       document.body.classList.add("dark");
     } else {
       document.body.classList.remove("dark");
@@ -44,6 +43,7 @@ const Navbar = () => {
     axiosSecure
       .get("/users")
       .then((response) => {
+        console.log("This is Response Data", response?.data);
         setUsers(response?.data);
         // setIsLoading(false);
       })
@@ -353,14 +353,10 @@ const Navbar = () => {
                         </div>
                       </label>
                       <div className="mt-5 mb-5 flex flex-col justify-center items-center">
-                        <h1
-                          className="font-medium text-[12px] lg:text-[18px] text-[#37517e]  hover:underline"
-                        >
+                        <h1 className="font-medium text-[12px] lg:text-[18px] text-[#37517e]  hover:underline">
                           {user?.displayName}
                         </h1>
-                        <p
-                          className="mt-2 text-[10px] lg:text-[12px] font-medium text-[#37517e] hover:underline"
-                        >
+                        <p className="mt-2 text-[10px] lg:text-[12px] font-medium text-[#37517e] hover:underline">
                           {user?.email}
                         </p>
                       </div>
@@ -369,7 +365,10 @@ const Navbar = () => {
                     <ul className="flex flex-col justify-center items-center">
                       <li>
                         {isAdmin ? (
-                          <Link to="/dashboard/adminHome" className="text-black">
+                          <Link
+                            to="/dashboard/adminHome"
+                            className="text-black"
+                          >
                             Dashboard
                           </Link>
                         ) : (

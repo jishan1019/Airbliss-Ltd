@@ -13,6 +13,7 @@ import { CiBadgeDollar } from "react-icons/ci";
 import { PiNoteLight } from "react-icons/pi";
 import axios from "axios";
 import { errorToast, successToast } from "../../../utils/toast";
+import { MdOutlineCloudUpload } from "react-icons/md";
 
 const FlightDetails = () => {
   const { airportCode, _id, id } = useParams();
@@ -28,10 +29,9 @@ const FlightDetails = () => {
     dispatch(setPath({ id, airportCode }));
   }, [id]);
 
-  console.log(filterFlight);
-
   const [updateData, setUpdateData] = useState({
     airportName: filterFlight[0]?.airportName,
+    airlineLogo: filterFlight[0]?.airlineLogo,
     airlineName: filterFlight[0]?.airlineName,
     amountPerKm: filterFlight[0]?.amountPerKm,
     taxesAndFees: filterFlight[0]?.taxesAndFees,
@@ -73,6 +73,36 @@ const FlightDetails = () => {
       ...updateData,
       [name]: value,
     });
+  };
+
+  const handleImageUpload = async (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      // Send the image to ImgBB
+      const imgbbResponse = await fetch(
+        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const imgbbData = await imgbbResponse.json();
+
+      if (imgbbData && imgbbData.data) {
+        // Set the image link in your form data
+        setUpdateData((prevData) => ({
+          ...updateData,
+          airlineLogo: imgbbData.data.url,
+        }));
+      } else {
+        console.error("Error uploading image to ImgBB");
+      }
+    }
   };
 
   return (
@@ -320,6 +350,20 @@ const FlightDetails = () => {
                       </div>
 
                       <div>
+                        <label className=" relative border-b-[1px] w-full border-black md:w-[195px] py-2 px-4 cursor-pointer flex items-center">
+                          <span className="absolute inset-0 z-10"></span>
+                          <MdOutlineCloudUpload className="mr-2" />
+                          Airline Image
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageUpload}
+                            className="absolute inset-0 z-20  w-full h-full opacity-0 cursor-pointer"
+                          />
+                        </label>
+                      </div>
+
+                      <div>
                         <input
                           className="p-2 border-b-[0.5px] w-full md:w-min border-black"
                           type="number"
@@ -362,7 +406,7 @@ const FlightDetails = () => {
                           name="durationPerKm"
                           value={updateData.durationPerKm}
                           onChange={handleChange}
-                          placeholder="Duration Per Km Ex:(0.2)"
+                          placeholder="Duration Per Km Ex:(200)"
                           required
                         />
                       </div>

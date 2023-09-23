@@ -384,7 +384,7 @@ const AddFlight = () => {
                   name="durationPerKm"
                   value={formData.durationPerKm}
                   onChange={handleChange}
-                  placeholder="Duration Per Km Ex:(0.2)"
+                  placeholder="Duration Per Km Ex:(200)"
                   required
                 />
               </div>

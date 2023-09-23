@@ -9,12 +9,10 @@ import { setUserBookings } from "../../../redux/features/usersSlice";
 import { MdManageSearch } from "react-icons/md";
 import { TbCalendarTime } from "react-icons/tb";
 
-const UserNav = ({closeSidebar}) => {
+const UserNav = ({ closeSidebar }) => {
   const { user } = useAuth();
   const refetch = useSelector((state) => state.userInfo?.refetch);
   const dispatch = useDispatch();
-
-  console.log("refetch from userNav", refetch);
 
   useEffect(() => {
     fetch(`http://localhost:5000/userBooking/${user?.email}`)
@@ -28,7 +26,7 @@ const UserNav = ({closeSidebar}) => {
     <div>
       <NavLink
         to="UserHome"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -43,7 +41,7 @@ const UserNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="booking"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -58,7 +56,7 @@ const UserNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="userInsurance"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -73,7 +71,7 @@ const UserNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="applyReschedule"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive
@@ -88,7 +86,7 @@ const UserNav = ({closeSidebar}) => {
       </NavLink>
       <NavLink
         to="account"
-        onClick={()=>closeSidebar('false')}
+        onClick={() => closeSidebar("false")}
         className={({ isActive }) =>
           `flex items-center shadow-lg rounded-full px-4 py-2 mt-5 transition-colors duration-300 transform hover:bg-white hover:text-cyan-500 ${
             isActive

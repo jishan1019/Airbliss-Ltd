@@ -14,8 +14,6 @@ const RecommendedFlights = () => {
       });
   }, []);
 
-  console.log(recommendedFlights);
-
   return (
     <div id="recommended-flights">
       <div>
