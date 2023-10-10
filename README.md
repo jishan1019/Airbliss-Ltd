@@ -1,5 +1,5 @@
 # Airbliss-LTD
-A Flight Managment system Website
+<strong>A Flight Managment system Website</strong>
 
 🚀 Led a dynamic team of 6 in creating "Airbliss Ltd," a real-time flight booking website using MERN stack and Redux. Delivered a feature-rich platform with capabilities including flight search, weather alerts, filtering, secure payment gateways, insurance policies, and more.
 
