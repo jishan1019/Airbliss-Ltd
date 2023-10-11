@@ -17,3 +17,5 @@
 Feel free to adjust and expand upon this summary to include any additional accomplishments or details you'd like to highlight.
 
 - Live Site: https://airbliss-flight-booking.web.app/
+- Admin gmail : admin@gmail.com
+- Password : 123456
