@@ -22,6 +22,9 @@ import {
   setCurrentPage,
   setFlightDetailsVisibility,
 } from "../../../../redux/features/bookTicketSlice.js";
+
+import { setSelectedCard } from "../../../../redux/features/bookingInfoSlice";
+
 import useAuth from "../../../../hooks/useAuth";
 
 const ITEMS_PER_PAGE = 3;
@@ -132,9 +135,9 @@ const BookFlight = () => {
     }
   };
 
-  console.log("chekjjjjjjjjjjj", flightData);
-
   const handelCardComapnyFilter = (airlineName) => {
+    dispatch(setSelectedCard(airlineName));
+
     const filteredData = flight?.filter(
       (item) => item.airlineName === airlineName
     );

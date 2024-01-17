@@ -195,8 +195,8 @@ const AdminHome = () => {
               <Tooltip />
               <ReferenceLine x="January" stroke="green" />
               <ReferenceLine
-                y={4000}
-                label="Max"
+                y={20000}
+                label="Min"
                 stroke="red"
                 strokeDasharray="3 3"
               />
